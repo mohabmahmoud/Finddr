@@ -29,7 +29,7 @@ class _SplashState extends State<Splash> {
      });
      Navigator.pop(context);
       Navigator.push(context, MaterialPageRoute(builder: (_){
-return(id==0)? LoginScreen():null;
+return LoginScreen();
 
       }));
     });
@@ -60,8 +60,7 @@ return(id==0)? LoginScreen():null;
     print(id);
     if(id==null){
       setState(() {
-        id=0;
-        prefs.setInt('id',0 );
+        prefs.setInt('id',null );
       });
 
     }
