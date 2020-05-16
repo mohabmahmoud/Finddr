@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:finddoctor/ui/SharedScreen/login.dart';
+
 import '../../Constants/widthandheight.dart';
 import '../../widget/loder.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +29,8 @@ class _SplashState extends State<Splash> {
      });
      Navigator.pop(context);
       Navigator.push(context, MaterialPageRoute(builder: (_){
-        //return HOME(lang);
+return LoginScreen();
+
       }));
     });
 
