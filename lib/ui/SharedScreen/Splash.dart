@@ -14,7 +14,7 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   var x=SystemChrome.setEnabledSystemUIOverlays ([]);
-  bool lang;
+  int id;
   @override
   void initState() {
     // TODO: implement initState
@@ -29,7 +29,7 @@ class _SplashState extends State<Splash> {
      });
      Navigator.pop(context);
       Navigator.push(context, MaterialPageRoute(builder: (_){
-return LoginScreen();
+return(id==0)? LoginScreen():null;
 
       }));
     });
@@ -39,7 +39,7 @@ return LoginScreen();
 
   @override
   Widget build(BuildContext context) {
-    getlang(lang);
+    getdata();
     x;
     return Scaffold(bottomNavigationBar: Container(height: getheight(context)/4-70,
     child:Center(
@@ -54,19 +54,19 @@ return LoginScreen();
     );
   }
 
-   getlang(bool l)async{
+   getdata()async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    l=prefs.getBool('lang');
-    print(l);
-    if(l==null){
+    id=prefs.getInt('id');
+    print(id);
+    if(id==null){
       setState(() {
-        lang=true;
-        prefs.setBool('lang',true );
+        id=0;
+        prefs.setInt('id',0 );
       });
 
     }
     else{
-      lang =l;
+      id =id;
     }
 
 
