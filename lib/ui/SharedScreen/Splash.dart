@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:finddoctor/ui/Admin/HomeAdmin.dart';
 import 'package:finddoctor/ui/Customer/HomeCustomer.dart';
+import 'package:finddoctor/ui/Doctor/HomeDoctor.dart';
 import 'package:finddoctor/ui/SharedScreen/login.dart';
 
 import '../../Constants/widthandheight.dart';
@@ -23,7 +24,7 @@ class _SplashState extends State<Splash> {
     // TODO: implement initState
     super.initState();
 
-    const duartion=Duration(seconds: 4);
+    const duartion=Duration(seconds: 4 );
 
 
     new Timer(duartion,(){
@@ -32,7 +33,7 @@ class _SplashState extends State<Splash> {
      });
      Navigator.pop(context);
       Navigator.push(context, MaterialPageRoute(builder: (_){
-return (rank==null)? LoginScreen(): (rank==1)?AdminHome(uid: id,):(rank==2)?null:HomeCustomer(uid: id,);
+return (rank==null)? LoginScreen(): (rank==1)?AdminHome(uid: id,):(rank==2)?HomeDoctor(uid:id):HomeCustomer(uid: id,);
 
       }));
     });
