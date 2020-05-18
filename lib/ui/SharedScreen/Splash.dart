@@ -23,7 +23,7 @@ class _SplashState extends State<Splash> {
     // TODO: implement initState
     super.initState();
 
-    const duartion=Duration(seconds: 5);
+    const duartion=Duration(seconds: 4);
 
 
     new Timer(duartion,(){
