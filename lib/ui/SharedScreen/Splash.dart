@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:finddoctor/ui/Admin/HomeAdmin.dart';
+import 'package:finddoctor/ui/Customer/HomeCustomer.dart';
 import 'package:finddoctor/ui/SharedScreen/login.dart';
 
 import '../../Constants/widthandheight.dart';
@@ -14,7 +16,8 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   var x=SystemChrome.setEnabledSystemUIOverlays ([]);
-  int id;
+  String id;
+  int rank;
   @override
   void initState() {
     // TODO: implement initState
@@ -29,7 +32,7 @@ class _SplashState extends State<Splash> {
      });
      Navigator.pop(context);
       Navigator.push(context, MaterialPageRoute(builder: (_){
-return LoginScreen();
+return (rank==null)? LoginScreen(): (rank==1)?AdminHome(uid: id,):(rank==2)?null:HomeCustomer(uid: id,);
 
       }));
     });
@@ -56,16 +59,17 @@ return LoginScreen();
 
    getdata()async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    id=prefs.getInt('id');
-    print(id);
+    id=prefs.getString('id');
     if(id==null){
       setState(() {
-        prefs.setInt('id',null );
+        prefs.setString('id',null );
       });
 
     }
     else{
+      setState(() {
       id =id;
+      rank=prefs.getInt('rank');});
     }
 
 
