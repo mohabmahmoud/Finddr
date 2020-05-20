@@ -14,7 +14,9 @@ class _HomeCustomerState extends State<HomeCustomer> {
     Drawer(child: ListView(children: <Widget>[
       Container(height: getheight(context)/3,child: Image.asset('images/logo.jpg'),),
       ListTile(leading: Icon(Icons.home,color: Colors.blue,),title: Text('Home'),
-      subtitle: Text('home page'),),
+      subtitle: Text('home page'+'mohjab'),),
+      ListTile(leading: Icon(Icons.search,color: Colors.blue,),title: Text('Search'),
+        subtitle: Text('Tap to Search'),),
       ListTile(leading: Icon(Icons.search,color: Colors.blue,),title: Text('Search'),
         subtitle: Text('Tap to Search'),),
       ListTile(leading: Icon(Icons.subdirectory_arrow_left,color: Colors.blue,),title: Text('Logout'),

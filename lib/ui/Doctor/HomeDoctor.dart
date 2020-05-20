@@ -10,7 +10,7 @@ class HomeDoctor extends StatefulWidget {
 class _HomeDoctorState extends State<HomeDoctor> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('Home Page'),),body: Container(child: Center(child:Text('Doctor')),),);
+    return Scaffold(appBar: AppBar(title: Text('Home Page'),),body: Container(child: Center(child:Text('Doctor'+'mohab')),),);
   }
 }
 
