@@ -27,7 +27,7 @@ class _AddDocotorState extends State<AddDocotor> {
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(title: Text('Add Doctor'),),body: Container(child: ListView(children: <Widget>[
 
-      SizedBox(height: 25,),
+      SizedBox(height: 20,),
       Padding(padding: EdgeInsets.only(left: 10,right: 10),
           child:TextField(controller: nameCont
             ,style:
