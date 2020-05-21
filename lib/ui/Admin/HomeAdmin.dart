@@ -17,7 +17,7 @@ class _AdminHomeState extends State<AdminHome> {
    int i=0;
   @override
   Widget build(BuildContext context) {
-    var pages=[null,null,null,null,null,null];
+    var pages=[null,null,null,Specializations(uid: widget.uid,)];
 
     return Scaffold(drawer:Drawer(child: ListView(children: <Widget>[
       Container(height: getheight(context)/3,child: Image.asset('images/logo.jpg'),),
