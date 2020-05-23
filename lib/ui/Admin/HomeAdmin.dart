@@ -4,6 +4,7 @@ import 'package:finddoctor/ui/SharedScreen/login.dart';
 import 'package:finddoctor/widget/loder.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:finddoctor/ui/Admin/AllDoctors.dart';
 
 class AdminHome extends StatefulWidget {
   String uid;
@@ -17,8 +18,7 @@ class _AdminHomeState extends State<AdminHome> {
    int i=0;
   @override
   Widget build(BuildContext context) {
-    var pages=[null,null,null,Specializations(uid: widget.uid,)];
-
+    var pages=[null,null,Doctors(uid:widget.uid),Specializations(uid: widget.uid,)]
     return Scaffold(drawer:Drawer(child: ListView(children: <Widget>[
       Container(height: getheight(context)/3,child: Image.asset('images/logo.jpg'),),
       ListTile(selected: (i==0),leading: Icon(Icons.home,color: Colors.blue,),title: Text('All Gaverenments'),
