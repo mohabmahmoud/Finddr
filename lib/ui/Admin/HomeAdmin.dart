@@ -19,7 +19,7 @@ class _AdminHomeState extends State<AdminHome> {
    int i=0;
   @override
   Widget build(BuildContext context) {
-    var pages=[null,Users(uid:widget.uid),Doctors(uid:widget.uid),Specializations(uid: widget.uid,)];
+    [Gaverenments(uid:widget.uid),Users(uid:widget.uid),Doctors(uid:widget.uid),Specializations(uid: widget.uid,)];
     return Scaffold(drawer:Drawer(child: ListView(children: <Widget>[
       Container(height: getheight(context)/3,child: Image.asset('images/logo.jpg'),),
       ListTile(selected: (i==0),leading: Icon(Icons.home,color: Colors.blue,),title: Text('All Gaverenments'),
