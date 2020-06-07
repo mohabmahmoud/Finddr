@@ -1,15 +1,24 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:finddoctor/Constants/widthandheight.dart';
+<<<<<<< HEAD
 import 'package:finddoctor/ui/Admin/AddDoctor.dart';
 import 'package:finddoctor/ui/Admin/AllDoctors.dart';
 import 'package:finddoctor/ui/Admin/AllSpecializations.dart';
+=======
+>>>>>>> origin/master
 import 'package:finddoctor/ui/SharedScreen/login.dart';
 import 'package:finddoctor/widget/loder.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+<<<<<<< HEAD
 
 import 'AllGaverenments.dart';
 import 'AllUsers.dart';
+=======
+import 'package:finddoctor/ui/Admin/AllDoctors.dart';
+import 'package:finddoctor/ui/Admin/AllUsers.dart';
+
+>>>>>>> origin/master
 class AdminHome extends StatefulWidget {
   String uid;
   AdminHome({this.uid});
@@ -22,8 +31,12 @@ class _AdminHomeState extends State<AdminHome> {
    int i=0;
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     var pages=[Gaverenments(uid:widget.uid),Users(uid:widget.uid),Doctors(uid:widget.uid),Specializations(uid: widget.uid,)];
 
+=======
+    [Gaverenments(uid:widget.uid),Users(uid:widget.uid),Doctors(uid:widget.uid),Specializations(uid: widget.uid,)];
+>>>>>>> origin/master
     return Scaffold(drawer:Drawer(child: ListView(children: <Widget>[
       Container(height: getheight(context)/3,child: Image.asset('images/logo.jpg'),),
       ListTile(selected: (i==0),leading: Icon(Icons.home,color: Colors.blue,),title: Text('All Gaverenments'),

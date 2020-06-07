@@ -229,7 +229,6 @@ selected1=newValue['specializationname'];
         .createUserWithEmailAndPassword(
         email: emailCont.text, password: passCont.text)
         .then((result) {
-          print('ok');
       Firestore.instance.collection('Users').document(result.user.uid).setData({
         'name':nameCont.text,
         'email':emailCont.text,
@@ -241,50 +240,8 @@ selected1=newValue['specializationname'];
         'price':0,
         'address':'',
         'image':'noimage.png',
-        'phone':'',
-        'uid':result.user.uid
       }).then((res) {
-        var days=['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];
-
-
-
-          Firestore.instance.collection('Days').document(result.user.uid).setData({
-            'name0':days[0],
-            'start0':'',
-            'end0':'',
-            'name1':days[1],
-            'start1':'',
-            'end1':'',
-            'name2':days[2],
-            'start2':'',
-            'end2':'',
-            'name3':days[3],
-            'start3':'',
-            'end3':'',
-            'name4':days[4],
-            'start4':'',
-            'end4':'',
-            'name5':days[5],
-            'start5':'',
-            'end5':'',
-            'name6':days[6],
-            'start6':'',
-            'end6':'',
-
-
-
-
-
-
-
-            'uid':result.user.uid
-          });
-
-
-
-
-
-        Navigator.pop(context);
+        print('171');Navigator.pop(context);
 
       });
     }).

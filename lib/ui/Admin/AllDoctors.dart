@@ -2,6 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:finddoctor/ui/Admin/AddDoctor.dart';
 import 'package:finddoctor/widget/loder.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+m
+>>>>>>> origin/master
 class Doctors extends StatefulWidget {
   String uid;
   Doctors({this.uid});
@@ -19,10 +23,14 @@ class _DoctorsState extends State<Doctors> {
     Navigator.push(context, MaterialPageRoute(builder: (context){
       return AddDocotor();
     }));
+<<<<<<< HEAD
     },), body:
 
 
     StreamBuilder(
+=======
+    },), body: StreamBuilder(
+>>>>>>> origin/master
       stream: Firestore.instance.collection('Users').where('rank',isEqualTo: 2).snapshots(),
       builder: (BuildContext context, AsyncSnapshot Snap) {
         if (!Snap.hasData) {
@@ -33,8 +41,12 @@ class _DoctorsState extends State<Doctors> {
           print(Snap.data.documents);
           return Container(child:
           ListView.builder(itemCount: Snap.data.documents.length, itemBuilder: (context, index) {
+<<<<<<< HEAD
             return ListTile(leading: CircleAvatar(backgroundImage:
             NetworkImage('https://firebasestorage.googleapis.com/v0/b/finddr-9761c.appspot.com/o/'+Snap.data.documents[index]['image']+'?alt=media&token=f45864f5-6a86-468d-9b32-b1069743365b',
+=======
+            return ListTile(leading: CircleAvatar(backgroundImage: NetworkImage('https://firebasestorage.googleapis.com/v0/b/finddr-9761c.appspot.com/o/'+documents[index]['image']+'.png?alt=media&token=f45864f5-6a86-468d-9b32-b1069743365b',
+>>>>>>> origin/master
 
                 ),),
               title: Text(Snap.data.documents[index]['name']),
