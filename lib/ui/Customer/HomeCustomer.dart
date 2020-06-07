@@ -1,5 +1,7 @@
 import 'package:finddoctor/Constants/widthandheight.dart';
+import 'package:finddoctor/ui/SharedScreen/login.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 class HomeCustomer extends StatefulWidget {
   String uid;
   HomeCustomer({this.uid});
@@ -20,7 +22,15 @@ class _HomeCustomerState extends State<HomeCustomer> {
       ListTile(leading: Icon(Icons.search,color: Colors.blue,),title: Text('Search'),
         subtitle: Text('Tap to Search'),),
       ListTile(leading: Icon(Icons.subdirectory_arrow_left,color: Colors.blue,),title: Text('Logout'),
-        subtitle: Text('Tap to Back to login Screen'),)
+        subtitle: Text('Tap to Back to login Screen'),onTap: ()async{
+          SharedPreferences prefs = await SharedPreferences.getInstance();
+          prefs.setInt('rank', null);
+          prefs.setString('id',null);
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+            return LoginScreen();
+          }));
+
+        },)
     ],),),appBar: AppBar(title: Text('Home Page'),),body: Container(child: Center(child:Text(widget.uid)),),);
   }
 }
