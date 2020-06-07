@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "701704902197",
+    "firebase_url": "https://finddr-9761c.firebaseio.com",
+    "project_id": "finddr-9761c",
+    "storage_bucket": "finddr-9761c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701704902197:android:0424d0aa3ea8eadd33437c",
+        "android_client_info": {
+          "package_name": "com.example.finddoctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701704902197-v003eo2edogjvta4281prrpdpce5vvo8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRCJ-UqCIh4X336CWbrU9B9fY5s1p1Mvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701704902197-v003eo2edogjvta4281prrpdpce5vvo8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
