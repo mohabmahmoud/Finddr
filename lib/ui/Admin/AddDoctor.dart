@@ -240,11 +240,26 @@ selected1=newValue['specializationname'];
         'price':0,
         'address':'',
         'image':'noimage.png',
+        'phone':'',
+        'uid':result.user.uid
       }).then((res) {
-        print('171');Navigator.pop(context);
 
-      });
-    }).
+
+        var days=['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];
+        for(int i=0;i<7;i++) {
+          Firestore.instance.collection('Days').document().setData({
+            'name': days[i],
+            'start':'',
+            'end': '',
+            'uid':result.user.uid
+
+
+          });
+        }
+
+
+
+    });}).
     catchError((err) {
       showDialog(
           context: context,

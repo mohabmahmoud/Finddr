@@ -54,11 +54,8 @@ class _GaverenmentsState extends State<Gaverenments> {
                       'Gaverenment': ADDnew.text,
                     })
                         .then((res) {
-<<<<<<< HEAD
                       print('mmmmm');
-=======
                       print('mmm');
->>>>>>> origin/master
                       Navigator.of(context).pop();
                     });
                   },

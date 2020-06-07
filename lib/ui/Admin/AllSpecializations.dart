@@ -32,11 +32,7 @@ class _SpecializationsState extends State<Specializations> {
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.only(top: 14.0),
                   prefixIcon: Icon(
-<<<<<<< HEAD
-                    Icons.place,
-=======
                     Icons.control_point,
->>>>>>> origin/master
                     color: Colors.blue,
                   ),
                   hintText: 'New Specializations',
@@ -58,11 +54,8 @@ class _SpecializationsState extends State<Specializations> {
                       'specializationname': ADDnew.text,
                     })
                         .then((res) {
-<<<<<<< HEAD
                       print('mmmmm');
-=======
                       print('mmmm');
->>>>>>> origin/master
                       Navigator.of(context).pop();
                     });
                   },
@@ -87,24 +80,17 @@ class _SpecializationsState extends State<Specializations> {
               trailing: IconButton(
                 icon: Icon(Icons.delete_forever, color: Colors.red,),onPressed: (){
 
-<<<<<<< HEAD
-=======
 
 
 
 
 
->>>>>>> origin/master
                 showDialog(
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
                         title: Text("Delete "),
-<<<<<<< HEAD
                         content: Text(Snap.data.documents[index]['specializationname']),
-=======
-                        content: Text(Snap.data.documents[index]['Gaverenment']),
->>>>>>> origin/master
                         actions: [
                           FlatButton(
                             child: Text("Close"),
