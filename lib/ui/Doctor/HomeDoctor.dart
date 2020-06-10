@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'UpdateDays.dart';
 import 'Updateprofile.dart';
+import 'ShowReservations.dart';
 
 class HomeDoctor extends StatefulWidget {
   String uid;
@@ -18,7 +19,7 @@ class _HomeDoctorState extends State<HomeDoctor> {
 
   @override
   Widget build(BuildContext context) {
-    var pages=[null,Editmydata(uid:widget.uid),UpdateDays(uid:widget.uid)];
+    var pages=[ShowReservations(uid:widget.uid)  ,Editmydata(uid:widget.uid),UpdateDays(uid:widget.uid)];
     return Scaffold(drawer:
     Drawer(child: ListView(children: <Widget>[
       Container(height: getheight(context)/3,child: Image.asset('images/logo.jpg'),),
