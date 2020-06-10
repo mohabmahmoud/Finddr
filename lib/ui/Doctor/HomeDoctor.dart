@@ -3,6 +3,7 @@ import 'package:finddoctor/ui/SharedScreen/login.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'UpdateDays.dart';
 import 'Updateprofile.dart';
 
 class HomeDoctor extends StatefulWidget {
@@ -17,7 +18,7 @@ class _HomeDoctorState extends State<HomeDoctor> {
 
   @override
   Widget build(BuildContext context) {
-    var pages=[null,Editmydata(uid:widget.uid),null];
+    var pages=[null,Editmydata(uid:widget.uid),UpdateDays(uid:widget.uid)];
     return Scaffold(drawer:
     Drawer(child: ListView(children: <Widget>[
       Container(height: getheight(context)/3,child: Image.asset('images/logo.jpg'),),

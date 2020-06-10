@@ -247,7 +247,7 @@ selected1=newValue['specializationname'];
 
         var days=['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];
         for(int i=0;i<7;i++) {
-          Firestore.instance.collection('Days').document().setData({
+          Firestore.instance.collection('Days').document(days[i]+result.user.uid).setData({
             'name': days[i],
             'start':'',
             'end': '',
