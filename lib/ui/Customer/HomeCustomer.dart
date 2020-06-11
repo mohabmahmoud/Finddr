@@ -2,6 +2,8 @@ import 'package:finddoctor/Constants/widthandheight.dart';
 import 'package:finddoctor/ui/SharedScreen/login.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'CustomerReservation.dart';
 class HomeCustomer extends StatefulWidget {
   String uid;
   HomeCustomer({this.uid});
@@ -12,15 +14,23 @@ class HomeCustomer extends StatefulWidget {
 class _HomeCustomerState extends State<HomeCustomer> {
   @override
   Widget build(BuildContext context) {
+    var pages=[CustomerReservation(uid:widget.uid),null,null];
+int i=0;
     return Scaffold(drawer:
     Drawer(child: ListView(children: <Widget>[
       Container(height: getheight(context)/3,child: Image.asset('images/logo.jpg'),),
       ListTile(leading: Icon(Icons.home,color: Colors.blue,),title: Text('Home'),
-      subtitle: Text('home page'+'mohjab'),),
+      subtitle: Text('home page'),onTap:(){
+      setState(() {
+      i=1;
+      });
+      },),
       ListTile(leading: Icon(Icons.search,color: Colors.blue,),title: Text('Search'),
-        subtitle: Text('Tap to Search'),),
-      ListTile(leading: Icon(Icons.search,color: Colors.blue,),title: Text('Search'),
-        subtitle: Text('Tap to Search'),),
+        subtitle: Text('Tap to Search'),onTap:(){
+        setState(() {
+          i=1;
+        });
+        },),
       ListTile(leading: Icon(Icons.subdirectory_arrow_left,color: Colors.blue,),title: Text('Logout'),
         subtitle: Text('Tap to Back to login Screen'),onTap: ()async{
           SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -31,6 +41,6 @@ class _HomeCustomerState extends State<HomeCustomer> {
           }));
 
         },)
-    ],),),appBar: AppBar(title: Text('Home Page'),),body: Container(child: Center(child:Text(widget.uid)),),);
+    ],),),appBar: AppBar(title: Text('Home Page'),),body: pages[i],);
   }
 }
