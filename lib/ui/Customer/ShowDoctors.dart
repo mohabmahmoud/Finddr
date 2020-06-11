@@ -30,10 +30,11 @@ class _ShowState extends State<Show> {
             return InkWell(onTap: (){
 
               Navigator.push(context, MaterialPageRoute(builder: (context){
-                return Profile(did: Snap.data.documents[index]['uid'],uid: widget.uid,);
+                return Profile(did: Snap.data.documents[index]['uid'].toString(),uid: widget.uid,);
               }));
 
-            },child:Card(child:Column(children: <Widget>[
+            },child:
+            Card(child:Column(children: <Widget>[
                Container(height:100,width:100,child:CircleAvatar(backgroundImage:
                 NetworkImage('https://firebasestorage.googleapis.com/v0/b/finddr-9761c.appspot.com/o/'+Snap.data.documents[index]['image']+'?alt=media&token=f45864f5-6a86-468d-9b32-b1069743365b',
 

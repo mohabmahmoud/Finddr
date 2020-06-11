@@ -24,7 +24,6 @@ class _CustomerReservationState extends State<CustomerReservation> {
               return Card(child: Column(children: <Widget>[
                 Text('You has reservation with doctor '+Snap.data.documents[index]['doctor']+'at '+
                     Snap.data.documents[index]['time']+'on the'+Snap.data.documents[index]['day']+ 'th'),
-                Text('doctor Phone:'+Snap.data.documents[index]['doctorPhone'],style: TextStyle(color: Colors.blue),)
               ],),);
             },itemCount:Snap.data.documents.length,);
 

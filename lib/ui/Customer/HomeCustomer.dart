@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'CustomerReservation.dart';
+
 import 'Searchdoctors.dart';
 class HomeCustomer extends StatefulWidget {
   String uid;
@@ -16,7 +17,7 @@ class _HomeCustomerState extends State<HomeCustomer> {
   int i=0;
   @override
   Widget build(BuildContext context) {
-    var pages=[CustomerReservation(uid:widget.uid),Search(uid:widget.uid),null];
+    var pages=[CustomerReservation(uid:widget.uid),Search(uid:widget.uid)];
 
 
     return Scaffold(drawer:
