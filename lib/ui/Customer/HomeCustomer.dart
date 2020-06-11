@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'CustomerReservation.dart';
+import 'Searchdoctors.dart';
 class HomeCustomer extends StatefulWidget {
   String uid;
   HomeCustomer({this.uid});
@@ -12,24 +13,28 @@ class HomeCustomer extends StatefulWidget {
 }
 
 class _HomeCustomerState extends State<HomeCustomer> {
+  int i=0;
   @override
   Widget build(BuildContext context) {
-    var pages=[CustomerReservation(uid:widget.uid),null,null];
-int i=0;
+    var pages=[CustomerReservation(uid:widget.uid),Search(uid:widget.uid),null];
+
+
     return Scaffold(drawer:
     Drawer(child: ListView(children: <Widget>[
       Container(height: getheight(context)/3,child: Image.asset('images/logo.jpg'),),
       ListTile(leading: Icon(Icons.home,color: Colors.blue,),title: Text('Home'),
       subtitle: Text('home page'),onTap:(){
       setState(() {
-      i=1;
+      i=0;
       });
+      Navigator.pop(context);
       },),
       ListTile(leading: Icon(Icons.search,color: Colors.blue,),title: Text('Search'),
         subtitle: Text('Tap to Search'),onTap:(){
         setState(() {
           i=1;
         });
+        Navigator.pop(context);
         },),
       ListTile(leading: Icon(Icons.subdirectory_arrow_left,color: Colors.blue,),title: Text('Logout'),
         subtitle: Text('Tap to Back to login Screen'),onTap: ()async{
